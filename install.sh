@@ -12,23 +12,23 @@ echo "📦 Installing Node.js (v18)..."
 curl -sSL https://deb.nodesource.com/setup_18.x | sudo bash -
 sudo apt install -y nodejs
 
-# Step 3: Clone your branded runner script
+# Step 3: Clone your actual runner repo (corrected)
 echo "📥 Cloning node runner from your repo..."
-cd $HOME && rm -rf gensyn-node-terminal
-git clone https://github.com/cryptoprofezor/gensyn-node-terminal.git
-chmod +x gensyn-node-terminal/gensyn.sh
+cd $HOME && rm -rf Gensyn-Node-Update
+git clone https://github.com/cryptoprofezor/Gensyn-Node-Update.git
+chmod +x Gensyn-Node-Update/gensyn.sh
 
 # Step 4: Install LocalXpose (optional tunnel)
 echo "🌐 Installing LocalXpose (for modal login tunnel)..."
 curl -s https://raw.githubusercontent.com/localxpose/localxpose/master/install.sh | bash
 
 # Step 5: Start everything in screen
-echo "📦 Setup complete!"
-echo "🧠 Launching in screen session: 'gensyn'"
 echo ""
+echo "✅ Setup complete!"
+echo "🧠 Launching in screen session: 'gensyn'"
 echo "🔓 After login modal loads, run this to expose it:"
-echo "./loclx tunnel http --to :3000"
+echo "   ./loclx tunnel http --to :3000"
 echo ""
 
 sleep 2
-screen -S gensyn bash gensyn-node-terminal/gensyn.sh
+screen -S gensyn bash Gensyn-Node-Update/gensyn.sh
